@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Agere_PhotoGrabber>
+            <version>1.0.0</version>
+        </Agere_PhotoGrabber>
+    </modules>
+
+    <frontend>
+        <routers>
+            <agere_photograbber>
+                <use>standard</use>
+                <args>
+                    <module>Agere_PhotoGrabber</module>
+                    <frontName>photograbber</frontName>
+                </args>
+            </agere_photograbber>
+        </routers>
+    </frontend>
+
+    <global>
+        <models>
+            <photoGrabber>
+                <class>Agere_PhotoGrabber_Model</class>
+            </photoGrabber>
+        </models>
+
+        <helpers>
+            <photoGrabber>
+                <class>Agere_PhotoGrabber_Helper</class>
+            </photoGrabber>
+        </helpers>
+    </global>
+
+    <crontab>
+        <jobs>
+            <photoGrabber_apply_all>
+                <schedule><cron_expr>30 08 * * *</cron_expr></schedule>
+                <run><model>photoGrabber/observer::runPhotoGrabber</model></run>
+            </photoGrabber_apply_all>
+        </jobs>
+    </crontab>
+
+</config>

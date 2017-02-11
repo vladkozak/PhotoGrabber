@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Agere_PhotoGrabber>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Adminhtml />
+                <Mage_Core />
+            </depends>
+        </Agere_PhotoGrabber>
+    </modules>
+</config>
